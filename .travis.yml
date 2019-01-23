@@ -3,7 +3,7 @@ node_js:
   - "0.10"
 branches:
   only:
-    - angular
+    - master
 before_script:
   - npm install -g bower
   - npm install -g gulp
