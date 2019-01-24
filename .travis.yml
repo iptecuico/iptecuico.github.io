@@ -4,5 +4,4 @@ node_js:
 branches:
   only:
     - master
-before_script:
-  - npm install -g bower
+  
