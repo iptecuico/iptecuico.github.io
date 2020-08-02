@@ -5,3 +5,6 @@
 /.vs/config
 /.vs/iptecuico.github.io/v15
 *.suo
+
+# dependencies
+/node_modules
