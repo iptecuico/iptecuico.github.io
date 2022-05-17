@@ -12,9 +12,22 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
     <script src="scripts/bootstrap.min.js"></script>
+    <script>
+        function switchMode() {
+            var element = document.body;
+            if (element.className == "light-mode")
+                element.className = "dark-mode";
+            else
+                element.className = "light-mode";
+        }
+    </script>
 </head>
 <body>
-    <section id="about" class="bg-light">
+    <div class="custom-control custom-switch float-right pt-1">
+        <input type="checkbox" class="custom-control-input" id="customSwitches" onclick="switchMode()" checked>
+        <label class="custom-control-label" for="customSwitches"></label>
+    </div>
+    <section id="about">
         <div class="container-fluid">
             <div class="flex-row text-center py-4">
                 <div class="col-12 p-3">
@@ -33,7 +46,7 @@
                             <span class="text-muted">|</span> 
                             <a target="_blank" href="https://acclaim.iptecuico.com"><i class="fas fa-angle-double-up text-dark fa-lg"></i></a>
                             <span class="text-muted">|</span> 
-                            <a target="_blank" href="mailto:dev@codetecuico.com" class="text-dark" style="text-decoration:none"><i class="fas fa-envelope fa-lg"></i> dev@codetecuico.com</a>
+                            <a target="_blank" href="mailto:dev@codetecuico.com" class="text-dark" style="text-decoration:none;"><i class="fas fa-envelope text-dark fa-lg"></i> dev@codetecuico.com</a>
                         </p>
                         <p>A software engineer specialized in enterprise web application development</p>
                         <span>
