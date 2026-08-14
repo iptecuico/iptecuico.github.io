@@ -3,64 +3,78 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Ian Peter Tecuico | Profile</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175984324-1"></script>
     <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-175984324-1');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
-    <script src="scripts/bootstrap.min.js"></script>
     <script>
         function switchMode() {
             var element = document.body;
-            if (element.className == "light-mode")
+            var toggle = document.getElementById("themeSwitch");
+
+            if (element.className == "light-mode") {
                 element.className = "dark-mode";
-            else
+                toggle.setAttribute("aria-pressed", "true");
+            }
+            else {
                 element.className = "light-mode";
+                toggle.setAttribute("aria-pressed", "false");
+            }
         }
     </script>
 </head>
-<body>
-    <div class="custom-control custom-switch float-right pt-1">
-        <input type="checkbox" class="custom-control-input" id="customSwitches" onclick="switchMode()" checked>
-        <label class="custom-control-label" for="customSwitches"></label>
-    </div>
-    <section id="about">
-        <div class="container-fluid">
-            <div class="flex-row text-center py-4">
-                <div class="col-12 p-3">
-                    <img src="https://www.gravatar.com/avatar/ca515fa9f28bff334715fa78cf0b3e10?s=520&amp;d=&amp;r=g" class="rounded rounded-circle mx-auto d-block mr-0" style="width:220px" />
+<body class="dark-mode">
+    <main class="page-shell">
+        <header class="site-header" aria-label="Site header">
+            <button class="theme-toggle" id="themeSwitch" type="button" onclick="switchMode()" aria-pressed="true">
+                <span class="theme-toggle__dot" aria-hidden="true"></span>
+                <span>Dark mode</span>
+            </button>
+        </header>
+
+        <section id="about" class="profile-card" aria-labelledby="profile-name">
+            <div class="profile-card__intro">
+                <div class="profile-photo-wrap">
+                    <img src="https://www.gravatar.com/avatar/ca515fa9f28bff334715fa78cf0b3e10?s=520&amp;d=&amp;r=g" class="profile-photo" alt="Ian Peter Tecuico" />
                 </div>
-                <div class="col-12">
-                    <div>
-                        <h3>Ian Peter Tecuico</h3>
-                        <h6>.Net Developer | Microsoft Azure Certified</h6>
-                        <div class="py-3">
-                            <a target="_blank" href="https://linkedin.iptecuico.com" class="p-1"><i class="fab fa-linkedin text-dark fa-2x"></i></a>
-                            <a target="_blank" href="https://credly.iptecuico.com" class="p-1"><i class="fas fa-angle-double-up text-dark fa-2x"></i></a>
-                            <a target="_blank" href="mailto:connectwithme@codetecuico.com" class="text-dark p-1" style="text-decoration:none;"><i class="fas fa-envelope text-dark fa-2x"></i></a>
-                            <a target="_blank" href="https://codetecuico.com" class="text-dark p-1" style="text-decoration:none;"><i class="fas fa-link text-dark fa-2x"></i></a>
-                        </div>
-                        <div class="py-1">
-                            <span>
-                                <a href="//az900.iptecuico.com" target="_blank"><img class="img-cert" style="width: 110px;" src="//images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="azure fundamentals badge" /></a>
-                            </span>
-                            <span>
-                                <a href="//az104.iptecuico.com" target="_blank"><img class="img-cert" style="width: 110px;" src="//images.credly.com/size/680x680/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png" alt="azure developer associate badge" /></a>
-                            </span>
-                            <span>
-                                <a href="//az204.iptecuico.com" target="_blank"><img class="img-cert" style="width: 110px;" src="//images.credly.com/size/680x680/images/92e0618b-8002-4868-9e88-794a33aeb3b5/azure-developer-associate-600x600.png" alt="azure developer associate badge" /></a>
-                            </span>
-                            <span>
-                                <a href="//az400.iptecuico.com" target="_blank"><img class="img-cert" style="width: 110px;" src="//images.credly.com/size/680x680/images/c3ab66f8-5d59-4afa-a6c2-0ba30a1989ca/CERT-Expert-DevOps-Engineer-600x600.png" alt="azure devops engineer expert badge" /></a>
-                            </span>
-                        </div>
+
+                <div class="profile-copy">
+                    <p class="eyebrow">Microsoft Azure Certified</p>
+                    <h1 id="profile-name">Ian Peter Tecuico</h1>
+                    <p class="role">.NET Developer</p>
+
+                    <div class="link-list" aria-label="Profile links">
+                        <a target="_blank" rel="noopener" href="https://linkedin.iptecuico.com"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                        <a target="_blank" rel="noopener" href="https://credly.iptecuico.com"><i class="fas fa-angle-double-up"></i><span>Credly</span></a>
+                        <a target="_blank" rel="noopener" href="mailto:connectwithme@codetecuico.com"><i class="fas fa-envelope"></i><span>Email</span></a>
+                        <a target="_blank" rel="noopener" href="https://codetecuico.com"><i class="fas fa-link"></i><span>Website</span></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+
+            <div class="certifications" aria-label="Azure certifications">
+                <a href="https://az900.iptecuico.com" target="_blank" rel="noopener">
+                    <img class="img-cert" src="https://images.credly.com/size/680x680/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png" alt="Azure Fundamentals badge" />
+                </a>
+                <a href="https://az104.iptecuico.com" target="_blank" rel="noopener">
+                    <img class="img-cert" src="https://images.credly.com/size/680x680/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png" alt="Azure Administrator Associate badge" />
+                </a>
+                <a href="https://az204.iptecuico.com" target="_blank" rel="noopener">
+                    <img class="img-cert" src="https://images.credly.com/size/680x680/images/92e0618b-8002-4868-9e88-794a33aeb3b5/azure-developer-associate-600x600.png" alt="Azure Developer Associate badge" />
+                </a>
+                <a href="https://az400.iptecuico.com" target="_blank" rel="noopener">
+                    <img class="img-cert" src="https://images.credly.com/size/680x680/images/c3ab66f8-5d59-4afa-a6c2-0ba30a1989ca/CERT-Expert-DevOps-Engineer-600x600.png" alt="Azure DevOps Engineer Expert badge" />
+                </a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
