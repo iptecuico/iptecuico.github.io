@@ -248,13 +248,23 @@ h1 {
     .profile-card__intro {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 34px 24px;
+        padding: 30px 20px;
         text-align: center;
     }
 
     .profile-photo-wrap {
-        max-width: 260px;
+        max-width: 220px;
         margin: 0 auto;
+    }
+
+    h1 {
+        white-space: normal;
+    }
+
+    .role,
+    .summary {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .link-list {
@@ -271,8 +281,34 @@ h1 {
         display: none;
     }
 
+    .site-header {
+        margin-bottom: 24px;
+    }
+
     .profile-card {
         border-radius: 22px;
+    }
+
+    .profile-card__intro {
+        padding: 26px 16px;
+        gap: 24px;
+    }
+
+    .profile-photo-wrap {
+        max-width: 200px;
+    }
+
+    h1 {
+        font-size: clamp(2.05rem, 11vw, 2.8rem);
+        line-height: 1.05;
+    }
+
+    .eyebrow {
+        margin-bottom: 10px;
+    }
+
+    .role {
+        margin-top: 10px;
     }
 
     .link-list a {
