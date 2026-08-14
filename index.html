@@ -19,14 +19,17 @@
         function switchMode() {
             var element = document.body;
             var toggle = document.getElementById("themeSwitch");
+            var label = document.getElementById("themeSwitchLabel");
 
             if (element.className == "light-mode") {
                 element.className = "dark-mode";
                 toggle.setAttribute("aria-pressed", "true");
+                label.textContent = "Light mode";
             }
             else {
                 element.className = "light-mode";
                 toggle.setAttribute("aria-pressed", "false");
+                label.textContent = "Dark mode";
             }
         }
     </script>
@@ -36,7 +39,7 @@
         <header class="site-header" aria-label="Site header">
             <button class="theme-toggle" id="themeSwitch" type="button" onclick="switchMode()" aria-pressed="true">
                 <span class="theme-toggle__dot" aria-hidden="true"></span>
-                <span>Dark mode</span>
+                <span id="themeSwitchLabel">Dark mode</span>
             </button>
         </header>
 
